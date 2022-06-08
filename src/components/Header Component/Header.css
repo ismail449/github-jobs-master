@@ -1,0 +1,7 @@
+.header {
+  text-transform: capitalize;
+  font-size: 24px;
+}
+.header span {
+  font-weight: 700;
+}
