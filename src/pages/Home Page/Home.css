@@ -40,4 +40,33 @@
   margin-left: -15.5%;
   color: #ffffff;
   font-size: 16px;
+  cursor: pointer;
+}
+.home-paginate {
+  display: flex;
+  justify-content: flex-end;
+}
+.page-item {
+  border: 1px solid #b7bcce;
+  display: inline;
+  border-radius: 4px;
+  list-style: none;
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #b9bdcf;
+  padding: 11px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.page-item:hover {
+  border: 1px solid #1e86ff;
+  color: #1e86ff;
+}
+.page-item-active {
+  background: #1e86ff;
+  color: #ffffff;
+}
+.page-item-active:hover {
+  background: #1e86ff;
+  color: #ffffff;
 }

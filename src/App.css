@@ -1,8 +1,11 @@
+body {
+  background-color: rgb(243, 240, 240);
+}
 .App-container {
   width: 82%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  color: #282538;
+  color: #334680;
 }
