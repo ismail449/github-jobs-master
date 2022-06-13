@@ -3,8 +3,10 @@
   background-image: url('../../backgroundImg.png');
   height: 130px;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 8px;
+  margin-bottom: 40px;
 }
 .home-search-form {
   height: 130px;

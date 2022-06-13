@@ -18,7 +18,6 @@ const Home = () => {
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(jobList.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(jobList.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, jobList]);
