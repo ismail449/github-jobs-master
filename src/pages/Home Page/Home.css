@@ -72,3 +72,12 @@
   background: #1e86ff;
   color: #ffffff;
 }
+.home-body {
+  display: flex;
+  justify-content: space-between;
+}
+.home-job-list {
+  display: flex;
+  flex-direction: column;
+  width: 68%;
+}

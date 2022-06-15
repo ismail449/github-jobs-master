@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
+import Filter from '../../components/Filter Component/Filter';
 import JobList from '../../components/JobList component/JobList';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import { url, requestOptions } from '../../apiKey';
@@ -58,28 +59,31 @@ const Home = () => {
           </button>
         </form>
       </div>
-      {jobList ? (
-        <>
-          <JobList jobList={currentItems} />
-          <ReactPaginate
-            nextLabel=">"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
-            marginPagesDisplayed={2}
-            pageCount={pageCount}
-            previousLabel="<"
-            pageClassName="page-item"
-            previousClassName="page-item"
-            nextClassName="page-item"
-            breakLabel="..."
-            breakClassName="page-item"
-            breakLinkClassName="page-link"
-            containerClassName="home-paginate"
-            activeClassName="page-item-active"
-            renderOnZeroPageCount={null}
-          />
-        </>
-      ) : null}
+      <div className="home-body">
+        <Filter />
+        {jobList ? (
+          <div className="home-job-list">
+            <JobList jobList={currentItems} />
+            <ReactPaginate
+              nextLabel=">"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={2}
+              pageCount={pageCount}
+              previousLabel="<"
+              pageClassName="page-item"
+              previousClassName="page-item"
+              nextClassName="page-item"
+              breakLabel="..."
+              breakClassName="page-item"
+              breakLinkClassName="page-link"
+              containerClassName="home-paginate"
+              activeClassName="page-item-active"
+              renderOnZeroPageCount={null}
+            />
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };
