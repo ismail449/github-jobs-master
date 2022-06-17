@@ -1,25 +1,34 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+  filterByLocation,
+  filterByEmploymentType,
+} from '../../redux/features/filter/filterSlice';
 import PublicIcon from '@mui/icons-material/Public';
 import './Filter.css';
 
 const Filter = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const dispatch = useDispatch();
   const cities = ['London', 'Cairo', 'New York', 'Berlin'];
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
   const handleSearch = (event) => {
-    if (event.keyCode === 13) {
-      console.log(event.target.value);
+    if (event.keyCode === 13 && event.target.value) {
+      dispatch(filterByLocation(event.target.value));
+    } else {
+      console.log('you did not enter any thing');
     }
   };
   const handleRadio = (event) => {
-    console.log(event.target.value);
+    dispatch(filterByLocation(event.target.value));
   };
   const handleCheckbox = (event) => {
-    console.log(event.target.checked);
+    console.log('checked', event.target.checked);
     setIsChecked(event.target.checked);
+    dispatch(filterByEmploymentType(event.target.checked));
   };
   return (
     <div className="filter">
@@ -37,7 +46,7 @@ const Filter = () => {
         <div className="form-input-container">
           <PublicIcon className="form-input-icon" />
           <input
-            defaultValue="City, state, zip code or country"
+            placeholder="City, state, zip code or country"
             className="form-input"
             type="search"
             onKeyUp={(event) => handleSearch(event)}

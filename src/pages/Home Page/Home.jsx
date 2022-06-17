@@ -1,47 +1,47 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import Filter from '../../components/Filter Component/Filter';
 import JobList from '../../components/JobList component/JobList';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
-import { url, requestOptions } from '../../apiKey';
+import { fetchJobs } from '../../redux/features/jobs/jobsSlice';
+
 import './Home.css';
 
 const Home = () => {
-  const [searchInput, setSearchInput] = useState(
-    'Title, companies, expertise or benefits',
-  );
-  const [jobList, setJobList] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
+  const location = useSelector((state) => state.filter.location);
+  const fulltime = useSelector((state) => state.filter.fulltime);
+  const jobs = useSelector((state) => state.jobs.jobs);
+  const dispatch = useDispatch();
 
   const itemsPerPage = 5;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(jobList.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(jobList.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, jobList]);
+    if (jobs.length > 0) {
+      setCurrentItems(jobs.slice(itemOffset, endOffset));
+      setPageCount(Math.ceil(jobs.length / itemsPerPage));
+    }
+  }, [itemOffset, itemsPerPage, jobs]);
+  useEffect(() => {
+    if (searchInput !== '') {
+      console.log('fulltime', fulltime);
+      dispatch(fetchJobs({ fulltime, location, searchInput }));
+    }
+  }, [location, fulltime]);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % jobList.length;
+    const newOffset = (event.selected * itemsPerPage) % jobs.length;
     setItemOffset(newOffset);
   };
-  const fetchSearch = async () => {
-    try {
-      const response = await fetch(
-        `${url}location=london&search=${searchInput}&sort_by=relevance`,
-        requestOptions,
-      );
-      const data = await response.json();
-      setJobList(data.results);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchSearch();
+    dispatch(fetchJobs({ fulltime, location, searchInput }));
   };
   return (
     <div className="home">
@@ -53,6 +53,7 @@ const Home = () => {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             type="search"
+            placeholder="Title, companies, expertise or benefits"
           />
           <button className="home-search-button" type="submit">
             Search
@@ -61,7 +62,7 @@ const Home = () => {
       </div>
       <div className="home-body">
         <Filter />
-        {jobList ? (
+        {jobs ? (
           <div className="home-job-list">
             <JobList jobList={currentItems} />
             <ReactPaginate
