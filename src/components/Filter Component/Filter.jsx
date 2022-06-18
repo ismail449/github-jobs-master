@@ -18,15 +18,12 @@ const Filter = () => {
   const handleSearch = (event) => {
     if (event.keyCode === 13 && event.target.value) {
       dispatch(filterByLocation(event.target.value));
-    } else {
-      console.log('you did not enter any thing');
     }
   };
   const handleRadio = (event) => {
     dispatch(filterByLocation(event.target.value));
   };
   const handleCheckbox = (event) => {
-    console.log('checked', event.target.checked);
     setIsChecked(event.target.checked);
     dispatch(filterByEmploymentType(event.target.checked));
   };
