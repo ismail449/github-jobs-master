@@ -1,0 +1,26 @@
+.side-section {
+  width: 30%;
+  font-size: 14px;
+}
+.side-section-back {
+  display: flex;
+  align-items: center;
+}
+.side-section-apply-link a {
+  width: 90%;
+  color: #1e86ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+.side-section-apply-link p {
+  font-weight: 700;
+
+  line-height: 21px;
+
+  text-transform: uppercase;
+
+  color: #b9bdcf;
+}
+.side-section-apply-link {
+  margin-top: 36px;
+}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import SideSection from '../../components/SideSection Component/SideSection';
+import './JobDetail.css';
 
 const JobDetail = () => {
   const jobs = useSelector((state) => state.jobs.jobs);
@@ -21,8 +23,12 @@ const JobDetail = () => {
   };
 
   return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: job.text }}></div>
+    <div className="job-detail">
+      <SideSection url={job.url} />
+      <div className="job-detail-body">
+        <div>Job Detail</div>
+        <div dangerouslySetInnerHTML={{ __html: job.text }}></div>
+      </div>
     </div>
   );
 };

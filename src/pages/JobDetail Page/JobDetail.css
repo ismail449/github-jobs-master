@@ -1,0 +1,6 @@
+.job-detail {
+  display: flex;
+}
+.job-detail-body {
+  width: 100%;
+}
