@@ -3,8 +3,6 @@ import JobSearch from '../../components/JobSearch Component/JobSearch';
 import Filter from '../../components/Filter Component/Filter';
 import Paginate from '../../components/Paginate Component/Paginate';
 
-import './Home.css';
-
 const Home = () => {
   return (
     <div className="home">

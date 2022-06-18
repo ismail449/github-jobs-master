@@ -9,6 +9,8 @@
   font-weight: 700;
   font-family: 'Roboto';
   font-style: normal;
+
+  color: #334680;
 }
 .job-item-position-title {
   font-weight: 400;
@@ -35,6 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 .job-item-detail {
   width: 100%;

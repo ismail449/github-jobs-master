@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import JobItem from '../JobItem Component/JobItem';
-import './JobList.css';
 
 const JobList = ({ jobList }) => {
+  console.log(jobList);
   return (
-    <div>
+    <div className="job-list">
       {jobList?.map((job) => (
-        <JobItem key={job.id} job={job} />
+        <Link style={{ textDecoration: 'none' }} to={`job-detail/${job.id}`}>
+          <JobItem key={job.id} job={job} />
+        </Link>
       ))}
     </div>
   );
