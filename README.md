@@ -60,7 +60,7 @@
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-In this application/site you can search for tech related jobs and filter the results using the location and the job type you can also see job description and how to apply
+In this application/site you can search for tech related jobs and filter the results using the location and the employment type you can also see job description and how to apply
 
 ## Contact
 
