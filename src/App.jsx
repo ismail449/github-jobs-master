@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header Component/Header';
 import Home from './pages/Home Page/Home';
 import JobDetail from './pages/JobDetail Page/JobDetail';
+import Footer from './components/Footer Component/Footer';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="job-detail/:jobId" element={<JobDetail />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
