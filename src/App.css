@@ -23,3 +23,61 @@ body {
   justify-content: center;
   text-decoration: none;
 }
+
+@media screen and (max-width: 900px) {
+  .home-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .home-job-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .filter {
+    width: 100%;
+  }
+  .home-search-input {
+    width: 95%;
+    font-size: 12px;
+  }
+  .home-search-button {
+    width: 25%;
+
+    margin-left: -26%;
+  }
+  .job-item-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .job-item-employment p {
+    width: 100%;
+  }
+  .job-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  .side-section {
+    width: 100%;
+    font-size: 14px;
+  }
+  div.job-info-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  div.job-info-header p {
+    width: 32%;
+  }
+  .job-item-location-date {
+    font-size: 9px;
+  }
+  .page-item {
+    font-size: 12px;
+    padding: 8px;
+    margin-right: 5px;
+  }
+}
