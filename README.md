@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://ismail-449-github-jobs.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://ismail-449-github-jobs.netlify.app/">
+    <a href="https://github.com/ismail449/github-jobs-master">
       Solution
     </a>
     <span> | </span>
