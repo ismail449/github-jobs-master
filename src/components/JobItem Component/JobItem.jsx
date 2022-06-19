@@ -1,13 +1,10 @@
 import React from 'react';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PublicIcon from '@mui/icons-material/Public';
+import getNumberOfDays from '../getNumberOfDays';
 import './JobItem.css';
 
 const JobItem = ({ job }) => {
-  const date = new Date(job.date_posted);
-  const today = new Date();
-  const diffTime = Math.abs(today - date);
-  const numberOfDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
   return (
     <div className="job-item">
       <div className="job-item-img">
@@ -33,7 +30,7 @@ const JobItem = ({ job }) => {
 
             <div className="job-item-date">
               <AccessTimeIcon />
-              <p>{numberOfDays} days ago</p>
+              <p>{getNumberOfDays(job.date_posted)} days ago</p>
             </div>
           </div>
         </div>

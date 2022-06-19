@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SideSection from '../../components/SideSection Component/SideSection';
+import JobInfo from '../../components/JobInfo Component/JobInfo';
 import './JobDetail.css';
 
 const JobDetail = () => {
@@ -16,8 +17,6 @@ const JobDetail = () => {
   const getJob = () => {
     if (jobs.length > 0) {
       const FoundJob = jobs.find((job) => job.id === +jobId);
-
-      console.log(FoundJob);
       setJob(FoundJob);
     }
   };
@@ -26,8 +25,11 @@ const JobDetail = () => {
     <div className="job-detail">
       <SideSection url={job.url} />
       <div className="job-detail-body">
-        <div>Job Detail</div>
-        <div dangerouslySetInnerHTML={{ __html: job.text }}></div>
+        <JobInfo job={job} />
+        <div
+          className="job-detail-body-text"
+          dangerouslySetInnerHTML={{ __html: job.text }}
+        ></div>
       </div>
     </div>
   );

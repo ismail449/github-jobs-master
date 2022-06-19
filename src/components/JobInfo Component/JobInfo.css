@@ -1,0 +1,70 @@
+.job-info {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.job-info-header {
+  display: flex;
+  align-items: center;
+}
+
+.job-info-header h2 {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 28px;
+  display: inline;
+  margin-right: 25px;
+}
+.job-info-header p {
+  border: 1px solid #334680;
+  width: 12%;
+  border-radius: 4px;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+  display: inline;
+}
+.job-info-icon-text {
+  display: flex;
+  align-items: center;
+  color: #b7bcce;
+}
+.job-info-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 8.5px;
+}
+.job-info-icon-text p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0px;
+}
+.job-info-img {
+  margin-right: 12px;
+}
+.job-info-img img {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.job-info-img .not-found {
+  width: 42px;
+  font-size: 9px;
+}
+.job-info-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 35px;
+}
+
+.job-info-company-name {
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0px 0px 10px 0px;
+}

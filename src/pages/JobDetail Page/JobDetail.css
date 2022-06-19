@@ -4,3 +4,10 @@
 .job-detail-body {
   width: 100%;
 }
+.job-detail-body-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
