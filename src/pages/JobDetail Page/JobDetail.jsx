@@ -16,7 +16,7 @@ const JobDetail = () => {
 
   const getJob = () => {
     if (jobs.length > 0) {
-      const FoundJob = jobs.find((job) => job.id === +jobId);
+      const FoundJob = jobs.find((job) => job.id === jobId);
       setJob(FoundJob);
     }
   };
