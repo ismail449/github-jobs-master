@@ -5,6 +5,7 @@ import JobItem from '../JobItem Component/JobItem';
 const JobList = ({ jobList }) => {
   return (
     <div className="job-list">
+      
       {jobList?.map((job) => (
         <Link
           key={job.id}
